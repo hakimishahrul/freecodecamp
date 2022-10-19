@@ -34,3 +34,7 @@ echo -e "\nList of majors, in alphabetical order, that either no student is taki
 echo "$($PSQL "SELECT major FROM majors FULL JOIN students ON majors.major_id = students.major_id WHERE student_id IS NULL OR first_name ILIKE '%ma%' ORDER BY major")"
 
 echo -e "\nList of unique courses, in reverse alphabetical order, that no student or 'Obie Hilpert' is taking:"
+echo "$($PSQL "SELECT DISTINCT(course) FROM courses FULL JOIN majors_courses USING(course_id) FULL JOIN majors USING(major_id) FULL JOIN students USING(major_id) WHERE student_id IS NULL OR (first_name='Obie' AND last_name='Hilpert') ORDER BY course DESC")"
+
+echo -e "\nList of courses, in alphabetical order, with only one student enrolled:"
+echo "$($PSQL "SELECT course FROM courses FULL JOIN majors_courses USING(course_id) INNER JOIN majors USING(major_id) INNER JOIN students USING(major_id) GROUP BY course HAVING COUNT(*) = 1 ORDER BY course ASC")"
