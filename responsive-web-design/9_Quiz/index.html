@@ -1,0 +1,138 @@
+<!-- Learning Accessibility by Buiding a Quiz -->
+
+<!DOCTYPE html>
+
+<!-- Putting lang attribute helps screen readers in identifying the page language. -->
+<html lang="en">
+
+<head>
+
+    <!-- Both name and description attributes in meta element is useful for SEO -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="freeCodeCamp Accessibility Quiz practice project">
+
+    <!-- title element is useful for screen readers to understand the page content. 
+    Also one of the important part in SEO. -->
+    <title>freeCodeCamp Quiz</title>
+
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+    <!-- header element is used to introduce page and provide navigation -->
+    <header>
+        <img id="logo" src="https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg" alt="alt">
+        <h1>HTML/CSS Quiz</h1>
+        <nav>
+            <ul>
+                <li><a href="#student-info">INFO</a> </li>
+                <li><a href="#html-questions">HTML</a> </li>
+                <li><a href="#css-questions">CSS</a> </li>
+
+            </ul>
+        </nav>
+
+    </header>
+
+    <!-- main element is contain core content of the page -->
+    <main>
+        <form method="post" action="https://freecodecamp.org/practice-project/accessibility-quiz">
+
+            <!-- role attribute is used to indicate purpose behind an element on the page
+            to assistive techonolgies. A part of Web Accessibility Initiative (WAI) -->
+            <section role="region" aria-labelledby="student-info">
+                <h2 id="student-info">Student Info</h2>
+                <div class="info">
+
+                    <!-- It's important to link input to label element, 
+                    to provide assistive technology users with visual reference to input -->
+                    <label for="name">Student's Name: </label>
+
+                    <!-- Adding placeholder is not a best practice for accessibility.
+                    Users confuse the placeholder text with an actual input value -->
+                    <input id="name" name="Student" type="text">
+                </div>
+                <div class="info">
+                    <label for="email">Email Address: </label>
+                    <input id="email" name="Email" type="email">
+                </div>
+                <div class="info">
+                    <label for="date-of-birth">D.O.B.:<span class="sr-only">(Date of Birth)</span></label>
+                    <input id="date-of-birth" name="Date of Birth" type="date">
+                </div>
+            </section>
+            <section role="region" aria-labelledby="html-questions">
+                <h2 id="html-questions">HTML Questions</h2>
+                <div class="question-block">
+                    <p>1</p>
+                    <fieldset class="question" name="Question 1">
+                        <legend>The legend element represents a caption for the content of its parent fieldset element
+                        </legend>
+                        <ul class="answers-list">
+                            <li><label for="q1-a1"><input id="q1-a1" name="true-false-1" type="radio"
+                                        value="True">True</label></li>
+                            <li><label for="q1-a2"><input id="q1-a2" name="true-false-1" type="radio"
+                                        value="False">False</label></li>
+                        </ul>
+                    </fieldset>
+                </div>
+                <div class="question-block">
+                    <p>2</p>
+                    <fieldset class="question" name="Question 2">
+                        <legend>A label element nesting an input element is required to have a for attribute with the
+                            same value as the input's id</legend>
+                        <ul class="answers-list">
+                            <li><label for="q2-a1"><input id="q2-a1" name="true-false-2" type="radio"
+                                        value="True">True</label></li>
+                            <li><label for="q2-a2"><input id="q2-a2" name="true-false-2" type="radio"
+                                        value="False">False</label></li>
+                        </ul>
+                    </fieldset>
+                </div>
+            </section>
+            <section role="region" aria-labelledby="css-questions">
+                <h2 id="css-questions">CSS Questions</h2>
+                <div class="formrow">
+                    <div class="question-block">
+                        <label for="option">Are you a front-end developer?</label>
+                    </div>
+                    <div class="answer">
+                        <select name="option" id="option" required>
+                            <option value="">Select an Option</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                    <div class="question-block">
+                        <label for="flexbox">Do you have any questions?</label>
+                    </div>
+                    <div class="answer">
+                        <textarea name="flexbox" id="flexbox" cols="24" rows="5"
+                            placeholder="Who is flexbox..."></textarea>
+                    </div>
+                </div>
+            </section>
+            <input type="submit" value="Send">
+        </form>
+
+    </main>
+
+    <!-- footer element is a container for collection of content related to the page -->
+    <footer>
+
+        <!-- address element is a container for contact information for the author of the page -->
+        <address>
+            <a href="https://freecodecamp.org">freeCodeCamp</a> <br />
+            San Francisco<br />
+            California<br />
+            USA
+        </address>
+    </footer>
+
+
+
+</body>
+
+</html>
