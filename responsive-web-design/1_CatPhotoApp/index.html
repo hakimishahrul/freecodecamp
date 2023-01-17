@@ -1,0 +1,165 @@
+<!-- This <!DOCTYPE html> is special for declaration and ensures browser meet industry-wide specifications. -->
+<!DOCTYPE html>
+
+<!-- <html> attribute contains settings for HTML-level.
+  Usually contains lang attribute. -->
+<html lang="en">
+
+<!-- <head> element contains informations or settings for the website. It doesn't appear in HTML website. -->
+<head>
+
+  <!-- <meta> element sets browser behavior. -->
+  <meta charset="utf-8">
+
+  <!-- <title> element determints what browsers show in the title bar or tab for the page. -->
+  <title>CatPhotoApp</title>
+</head>
+
+<body>
+
+  <!-- <main> is used to identify different content area and make it Search Engine Optimization (SEO) and accessibility-friendly -->
+  <main>
+
+    <!-- h1 is the first header of its header class. Most HTML elements have opening <h1> and closing tags </h1>. Text for an element goes in between these tags. -->
+    <h1>CatPhotoApp</h1>
+
+    <!-- <section> elements is used to divide contents into sections, separating it from future content. -->
+    <section>
+
+      <!-- <h1>-<h6> are heading elements, used to signify contents. Lower the number, higher the importance. -->
+      <h2>Cat Photos</h2>
+
+      <!-- In between these tags is the comment section. -->
+      <!-- TODO: Add link to cat photos -->
+
+      <!-- <p> element is used to create a paragraph of text on website. -->
+      <p>See more <a target="_blank" href="https://freecatphotoapp.com">cat photos</a> in our gallery.</p>
+
+      <!-- <a> element is used to add link to a text or element. It must have href attribute to link. 
+          To link, put text or element in-between <a>. If don't want to link, simply put href="#". 
+            To open in new-tab, put target="_blank" as attribute. -->
+      <a href="https://freecatphotoapp.com">
+
+        <!-- <img> element is used to display image. It has self-closing tag. To display image it must have src attribute. 
+           alt element is optional to have better accessibility. -->
+        <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg"
+          alt="A cute orange cat lying on its back.">
+
+      </a>
+    </section>
+    <section>
+      <h2>Cat Lists</h2>
+      <h3>Things cats love:</h3>
+
+      <!-- <ul> element, is an unordered list, used to create bullet points. -->
+      <ul>
+
+        <!-- <li> element, is a list element, used to create list items. -->
+        <li>cat nip</li>
+
+        <li>laser pointers</li>
+        <li>lasagna</li>
+      </ul>
+
+      <!-- <figure> element represents self-contained content and allow associate an image w/ caption. -->
+      <figure>
+        <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/lasagna.jpg"
+          alt="A slice of lasagna on a plate.">
+
+        <!-- <figcaption> is the caption element of <figure> (optional) -->
+        <figcaption>Cats
+
+          <!-- <em> is an emphasize element, used to italicize texts. -->
+          <em>love</em>
+
+          lasagna.
+        </figcaption>
+
+      </figure>
+      <h3>Top 3 things cats hate:</h3>
+
+      <!-- <ol> element, is an ordered list, used to create numbered lists. -->
+      <ol>
+        <li>flea treatment</li>
+        <li>thunder</li>
+        <li>other cats</li>
+      </ol>
+      <figure>
+
+
+        <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/cats.jpg"
+          alt="Five cats looking around a field.">
+
+        <figcaption>Cats
+
+          <!-- <strong> element is used to bold text, indicating importance or urgent. -->
+          <strong>hate</strong>
+
+          other cats.
+        </figcaption>
+      </figure>
+    </section>
+    <section>
+      <h2>Cat Form</h2>
+
+      <!-- <form> is used to collect information from users. 
+        action attribute is used to send data into another link. -->
+      <form action="https://freecatphotoapp.com/submit-cat-photo">
+
+        <!-- <fieldset> element is used to group related inputs and labels together in a web form.
+          They are block-level elements (appear in new line). -->
+        <fieldset>
+
+          <!-- <legend> element acts as a caption in the fieldset. 
+            It gives users context about the fieldset. -->
+          <legend>Is your cat an indoor or outdoor cat?</legend>
+
+          <label>
+
+            <!-- to use type="radio" or type="checkbox" attribute for two or more inputs:
+              1. The values in their name attribute MUST be the same. 
+              2. The values in their 'value' attribute MUST be different.
+            checked attribute is used to enable by default when loading web. 
+            This is because form send data as name/value pair to action link.
+            -->
+            <input id="indoor" type="radio" name="indoor-outdoor" value="indoor" checked> Indoor</label>
+          <label><input id="outdoor" type="radio" name="indoor-outdoor" value="outdoor"> Outdoor</label>
+        </fieldset>
+        <fieldset>
+          <legend>What's your cat's personality?</legend>
+
+          <!-- <input> elements allows several ways to collect data from a web form.
+          type attribute sets an input field (checkbox, textbox, radio, etc).
+          name attribute allows link specified in form's action to access it. -->
+          <input id="loving" type="checkbox" name="personality" value="loving" checked> <label
+            for="loving">Loving</label>
+
+          <!-- <label> element labels the input. 
+               for attribute follows the corresponding input id. -->
+          <input id="lazy" type="checkbox" name="personality" value="lazy"> <label for="lazy">Lazy</label>
+          <input id="energetic" type="checkbox" name="personality" value="energetic"> <label
+            for="energetic">Energetic</label>
+        </fieldset>
+
+        <!-- placeholder attribute sets hint to the textbox. 
+        required attribute is used to set the input as compulsory to enter information. -->
+        <input type="text" name="catphotourl" placeholder="cat photo URL" required>
+
+        <!-- <button> element creates a button. 
+          type attribute is required (usually type="submit").  -->
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- <footer> element adds smaller note to the web. -->
+  <footer>
+    <p>
+
+
+      No Copyright - <a href="https://www.freecodecamp.org">freeCodeCamp.org</a>
+    </p>
+  </footer>
+</body>
+
+</html>

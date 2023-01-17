@@ -1,0 +1,70 @@
+/* canvas class is used as the content */
+.canvas {
+    width: 500px;
+    height: 600px;
+    background-color: #4d0f00;
+    
+    /* overflow: hidden hides the content and no scrolling mechanism should be provided to view the content outside the clipping region. */
+    overflow: hidden;
+
+    /* using filter property to add filters to the style. */
+    filter: blur(3px);
+}
+
+/* frame class is used to wrap around the canvas */
+.frame {
+    border: 50px solid black;
+    width: 500px;
+    padding: 50px;
+    margin: 20px auto;
+}
+
+.one {
+    width: 425px;
+    height: 150px;
+    background-color: #efb762;
+    margin: 20px auto;
+
+    /* this box-shadow parameters edits all positions and puts color at the 5th param */
+    box-shadow: 0 0 3px 3px #efb762;
+
+    /* border-radius makes the border round */
+    border-radius: 9px;
+
+    /* transform property applies transformation to the element */
+    transform: rotate(-0.6deg);
+}
+
+.two {
+    width: 475px;
+    height: 200px;
+    background-color: #8f0401;
+
+    /* This margin parameter sets top to 0px, horizontal margin to auto and bottom margin to 20px */
+    margin: 0 auto 20px;
+
+    box-shadow: 0 0 3px 3px #8f0401;
+
+    /* this border-radius parameters sets the 1st param to be top-left and bottom-left, and 2nd param to be top-right and bottom-right */
+    border-radius: 8px 10px;
+
+    transform: rotate(0.4deg);
+}
+
+.three {
+    width: 91%;
+    height: 28%;
+    background-color: #b20403;
+    margin: auto;
+    filter: blur(2px);
+    box-shadow: 0 0 5px 5px #b20403;
+
+    /* border-radius also accept four values */
+    border-radius: 30px 25px 60px 12px;
+
+    transform: rotate(0.2deg);
+}
+
+.one, .two {
+    filter: blur(1px);
+}

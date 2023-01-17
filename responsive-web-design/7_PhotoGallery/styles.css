@@ -1,0 +1,87 @@
+/* CSS Flexbox
+
+Flexbox is a one-dimensional CSS layout that can control the way items are spaced out and aligned within a container.
+Start using it by give an element a display property of flex.
+
+Flexbox has main-axis and cross-axis.
+Main-axis (defined by flex-direction property) has four values:
+- row (default): horizontal-axis w/ flex items from left to right
+- row-reverse: same as row, but from right to left
+- column: vertical-axis w/ flex items from top to bottom
+- column-reverse: same as column, but bottom to top
+NOTE: Will be different depending on text direction.
+Basically cross-axis is inverted axis of main-axis
+
+
+*/
+
+
+/* Using * to select all properties  */
+* {
+    /* normalize box model */
+    /* box-sizing: specifies the behavior of the 'width' and 'height' properties. */
+    box-sizing: border-box;
+}
+
+.gallery {
+
+    /* display: flex; generates a principal flex container box and establishes a flex formatting context. */
+    display: flex;
+
+    /* flex-direction: defined at the top comment */
+    flex-direction: row;
+
+    /* flex-wrap: determines how flex items behave when flex container is too small.
+    flex-wrap: wrap; allow items to wrap to next row/column.
+    flex-wrap: nowrap; (default) prevent items from wrapping and shrink (if needed). */
+    flex-wrap: wrap;
+
+    /* justify-content: determines how items inside flex container are positioned along main axis. */
+    justify-content: center;
+
+    /* align-items: positions the flex content along the cross-axis.
+     In this case if flex-direction: row; cross-axis is vertical, and vice-versa (column).*/
+    align-items: center;
+
+    /* object-fit: determine behavior of images. By default it is object-fit: fill;
+    object-fit: cover; tell the image to fill img container while maintaining aspect ratio of box (it crops to fit).*/
+    object-fit: fill;
+
+    /* gap: sets the gaps (aka gutters) between rows and columns of the flex, grid, and multi-column layout.  */
+    gap: 16px;
+
+    border-radius: 10px;
+    padding: 20px 10px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* style::after creates an element that's the last child of the selected element.
+Can use to add empty element after last object. */
+.gallery::after {
+    content: '';
+    width: 350px;
+}
+
+.gallery img {
+    width: 100%;
+    max-width: 350px;
+    height: 300px;
+}
+
+body {
+    margin: 0px;
+    font-family: sans-serif;
+    background-color: #f5f6f7;
+}
+
+.header {
+    /* text-transform: applies transformation to text */
+    text-transform: uppercase;
+
+    text-align: center;
+    padding: 32px;
+    background-color: #0a0a23;
+    color: #fff;
+    border-bottom: 4px solid #fdb347;
+}

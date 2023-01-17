@@ -1,0 +1,128 @@
+/* Before using box-sizing, inspecting element shows that label width is actually 288px.
+This is because browser sums up width with margin and padding.
+Solve this by selecting all elements and use box-sizing: border-box; */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+
+    text-align: center;
+    margin: -4px 0;
+
+
+    /* font-weight: 800; */
+}
+
+p {
+    margin: 0px;
+}
+
+.label {
+
+    /* borders can be used to group and prioirtize content. */
+    border: 2px solid black;
+
+    /* Good use of white space can bring focus to important elements of the page,
+and help guide user's eyes through the text. */
+    width: 270px;
+    margin: 20px auto;
+    padding: 0 7px;
+}
+
+/* Lines can help separate and group important content, especially when space is limited. */
+.divider {
+    border-bottom: 1px solid #888989;
+    margin: 2px 0;
+
+    /* letter-spacing: adjust space between each character of text in an element */
+    letter-spacing: 0.15px;
+
+    /* clear: Indicates which sides of an element's box(es) may not be adjacent to an earlier floating box. */
+    clear: right;
+}
+
+.bold {
+    /* font-weight: bold text */
+    font-weight: 800;
+}
+
+.right {
+
+    /* float: place an element on the left/right of its container, 
+    allowing other content (eg text) to wrap around it */
+    float: right;
+}
+
+.large {
+    height: 10px;
+}
+
+.large,
+.medium {
+    background-color: black;
+    border: 0;
+}
+
+.medium {
+    height: 5px;
+}
+
+.small-text {
+    font-size: 0.85rem;
+}
+
+
+.calories-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.calories-info h2 {
+    margin: 0;
+}
+
+.left-container p {
+    margin: -5px -2px;
+    font-size: 2em;
+    font-weight: 700;
+}
+
+.calories-info span {
+    margin: -7px -2px;
+    font-size: 2.4em;
+    font-weight: 700;
+}
+
+.right {
+    justify-content: flex-end;
+}
+
+.indent {
+    margin-left: 1em;
+}
+
+.double-indent {
+    margin-left: 2em;
+}
+
+/* :not is used to select all elements that don't match the given CSS rule */
+.daily-value p:not(.no-divider) {
+    border-bottom: 1px solid #888989;
+}
+
+.note {
+    font-size: 0.6rem;
+    margin: 5px 0;
+    padding: 0 8px;
+    text-indent: -8px;
+}

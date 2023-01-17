@@ -1,0 +1,49 @@
+input {
+    /* margin: 10px 0 0 0; */
+    width: 80%;
+}
+
+h1, p {
+    margin: 1em auto;
+    text-align: center;
+  }
+
+.inline {
+    width: unset;
+    /* margin: 0 0.5em 0 0; */
+    vertical-align: middle;
+}
+
+form {
+    width: 80vw;
+    margin: 0 auto;
+}
+
+fieldset {
+    margin: 0px;
+    padding: 2rem 0;
+    border: 0px;
+    border-bottom: 3px solid #3b3b4f;
+    width: 50%;
+    display: inline-block;
+}
+
+.fieldset-right {
+    text-align: right;
+}
+
+input {
+    /* margin: 10px 10px 0 0; */
+    width: 40%;
+    min-height: 2em;
+}
+
+label {
+    /* display: block; */
+    /* margin: 0.5rem 0; */
+}
+
+div {
+    display: inline;
+    /* width: 50%; */
+}

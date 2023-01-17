@@ -1,0 +1,147 @@
+/* CSS-code start as: 
+
+element {
+  property: value;
+}
+
+*/
+
+body {
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
+
+  /* font-family: changes the font of the text element. */
+  font-family: sans-serif;
+
+  /* padding: adds spaces inside of an element (squeezing contents inside).
+  One value changes all position (up, right, down, left).
+  Two values changes y-axis and x-axis (top-bottom, left-right) 
+  Can use padding-<position> to changes padding according to that position.*/
+  padding: 20px;
+}
+
+h1 {
+
+  /* font-size: determines the size of the font. */
+  font-size: 40px;
+
+  /* margin: adds spaces outside of an element (pushing outside elements). */
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+/* '.' is used to change style according to class values in HTML. */
+.established {
+
+  /* font-style: changes the style of the font. */
+  font-style: italic;
+}
+
+/* HTML elements can group together in one stylings. */
+h1, h2, p {
+
+  /* text-align: aligns text. */
+  text-align: center;
+}
+
+.menu {
+
+  /* width: sets an element's width.
+  When set percentage as value, it depends on parent's element. */
+  width: 80%;
+
+  /* background-color: changes background color of the element. */
+  background-color: burlywood;
+
+  /* To center element horizontally, margin-left: auto; and margin-right: auto;. */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+
+  /* max-width: signifies maximum width of the elements. 
+  If width is more than max-width, it set width as max-width, preventing it from growing too wide. */
+  max-width: 500px;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -25px;
+}
+
+hr {
+  height: 2px;
+  background-color: brown;
+
+  /* border-color: changes the color of border. */
+  border-color: brown;
+
+  /* border width: changes the width of border.
+  By default the width is 1px. */
+  /* border-width: 1px; */
+}
+
+.bottom-line {
+  margin-top: 25px;
+}
+
+h1, h2 {
+
+  /* This two fonts in font-family makes it so that the 2nd font is backup to first,
+  in an event where 1st font fails to load. This is called fallback value. */
+  font-family: Impact, serif;
+}
+
+/* This element means that it changes styles to p elements inside .item class. */
+.item p {
+
+  /* display: determines the type of box that are generated for an element. 
+  inline-block make the element behave more like inline elements.
+  It only take up the width of their content.*/
+  display: inline-block;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+
+.flavor, .dessert {
+  text-align: left;
+  width: 75%;
+}
+
+.price {
+  text-align: right;
+  width: 25%;
+}
+
+/* FOOTER */
+
+footer {
+  font-size: 14px;
+}
+
+.address {
+  margin-bottom: 5px;
+}
+
+a {
+  color: black;
+}
+
+/* ':behavior' is used to change style when the element changes to that kind of behavior.
+This is called pseudo-selector. */
+a:visited {
+  color: black;
+}
+
+a:hover {
+  color: brown;
+}
+
+a:active {
+  color: brown;
+}

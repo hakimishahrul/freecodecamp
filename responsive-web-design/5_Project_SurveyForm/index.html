@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Survey Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1 id="title">Survey Form</h1>
+    <p id="description">Enjoying my work? Please let me know about your thoughts.</p>
+    <form method="post" id="survey-form" action="#">
+        <fieldset class="fieldset-left">
+            <div><label id="name-label" for="name">Name: <input id="name" type="text" placeholder="Name" required></label></div>
+            
+            <div><label id="number-label" for="number">Number: <input id="number" type="number" placeholder="Number" min="3"
+                max="10"></label></div>
+            
+            
+
+        </fieldset>
+        <fieldset class="fieldset-right">
+            <div><label id="email-label" for="email">Email: <input id="email" type="email" placeholder="Email" required></label></div>
+
+        </fieldset>
+
+
+        <select id="dropdown">
+            <option value="0">-select one-</option>
+            <option value="1">A</option>
+            <option value="2">B</option>
+            <option value="3">C</option>
+            <option value="4">D</option>
+        </select>
+        <label for="radio-1">
+            <input id="radio-1" type="radio" name="personal-radio" class="inline" value="1"/>Personal 1
+        </label>
+        <label for="radio-2">
+            <input id="radio-2" type="radio" name="personal-radio" class="inline" value="2"/>Personal 2
+        </label>
+        <label for="checkbox-1">
+            <input id="checkbox-1" type="checkbox" name="personal-checkbox" class="inline" value="1"/>Checkbox 1
+        </label>
+        <label for="checkbox-2">
+            <input id="checkbox-2" type="checkbox" name="personal-checkbox" class="inline" value="2"/>Checkbox 2
+        </label>
+
+        <label>
+            <textarea id="comments" name="comments" rows="3" cols="30" placeholder="Put your comments here."></textarea>
+        </label>
+        <input id="submit" type="submit" value="Submit" />
+    </form>
+</body>
+
+</html>
