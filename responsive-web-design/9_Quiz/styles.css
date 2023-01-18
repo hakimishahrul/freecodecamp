@@ -1,3 +1,12 @@
+/* @media at-rule gives media featuer to HTML */
+@media (prefers-reduced-motion: no-preference) {
+    * {
+        scroll-behavior: smooth;
+    }
+}
+
+
+
 body {
     background: #f5f6f7;
     color: #1b1b32;
@@ -21,17 +30,33 @@ header {
     width: 100%;
     background-color: #1b1b32;
     display: flex;
+
+    /* Flex items will be evenly distributed in the line. */
+    justify-content: space-between;
+    top: 0;
+    align-items: center;
+    position: fixed;
 }
 
 h1 {
     color: #f1be32;
     font-size: min(5vw, 1.2em);
+    text-align: center;
 }
 
 /* Targeting unordered list within nav elements */
 nav>ul {
     display: flex;
     justify-content: space-evenly;
+
+    /* using flexbox to wrap the ul content */
+    flex-wrap: wrap;
+
+    align-items: center;
+    padding-inline-start: 0;
+    margin-block: 0;
+    height: 100%;
+
 }
 
 /* Typeface is important in accessibility of a page.
@@ -44,6 +69,8 @@ h2 {
 
 h2 {
     border-bottom: 4px solid #dfdfe2;
+    margin-top: 0;
+    padding-top: 60px;
 }
 
 /* This is a common pattern to visually hide text 
@@ -76,6 +103,112 @@ nav>ul>li {
 /* Contrast between elements is important for visual accessibility.
 The contrast should be 4.5:1 */
 
-li > a {
+li>a {
     color: #dfdfe2;
+
+    /* text-decoration property applies decoration setting to text */
+    text-decoration: none;
+}
+
+nav>ul>li:hover {
+
+    /* change behavior of cursor */
+    cursor: pointer;
+    background-color: #dfdfe2;
+    color: #1b1b32;
+
+}
+
+main {
+    padding-top: 25px;
+}
+
+section {
+    width: 80%;
+    margin-top: 0;
+    margin: 10px auto;
+    max-width: 600px;
+
+}
+
+.info {
+    padding: 10px 0 0 5px;
+}
+
+.formrow {
+    margin-top: 30px;
+    padding: 0 15px;
+}
+
+input {
+    font-size: 16px;
+}
+
+.info>input {
+    width: 50%;
+    text-align: left;
+}
+
+.info>label {
+    width: 10%;
+    min-width: 55px;
+    text-align: right;
+}
+
+.info>label, .info>input {
+    display: inline-block;
+    
+}
+
+.question-block {
+    text-align: left;
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    padding-top: 5px;
+
+}
+
+p {
+    margin-top: 5px;
+    padding-left: 15px;
+    font-size: 20px;
+
+}
+
+.question {
+    border: none;
+    padding-bottom: 0;
+}
+
+.answers-list {
+
+    /* Remove the list style of the ul */
+    list-style: none;
+    padding: 0;
+}
+
+button {
+    display: block;
+    margin: 40px auto;
+    width: 40%;
+    padding: 15px;
+    font-size: 23px;
+    background: #d0d0d5;
+    border: 3px solid #3b3b4f;
+}
+
+footer {
+    background-color: #2a2a40;
+    display: flex;
+    justify-content: center;
+}
+
+footer, footer a {
+    color: #d0d0d5;
+}
+
+address {
+    text-align: center;
+    padding: 5px;
 }
