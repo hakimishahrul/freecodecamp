@@ -10,23 +10,24 @@ body {
 
 /* This span[class~="sr-only"] selector will select any span element whose class includes "sr-only" */
 /* This style will ensure elements are completely hidden visually */
+/* !important keyword ensure this property are always applied as top priority */
 span[class~="sr-only"] {
-    border: 0;
+    border: 0 !important;
 
     /* clip: define visible portions of element */
-    clip: rect(1px,1px,1px,1px);
+    clip: rect(1px,1px,1px,1px) !important;
 
     /* clip-path: determints shape the clip property should take  */
-    clip-path: inset(50%);
-    -webkit-clip-path: inset(50%);
+    clip-path: inset(50%) !important;
+    -webkit-clip-path: inset(50%) !important;
 
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    white-space: nowrap;
-    position: absolute;
-    padding: 0;
-    margin: -1px;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+    position: absolute !important;
+    padding: 0 !important;
+    margin: -1px !important;
 }
 
 h1 {
@@ -72,4 +73,121 @@ section {
     margin: 0 -2px;
     padding: 0.5rem calc(1.25rem + 2px) 0.5rem 0;
 
+}
+
+/* This span[class] syntex will target any span element that has a class attribute set,
+regardless of any attribute's value */
+#years span[class] {
+    font-weight: bold;
+    width: 4.5rem;
+    text-align: right;
+
+}
+
+.table-wrap {
+    padding: 0 0.75rem 1.5rem .75rem;
+
+}
+
+/* :not() target all elements that don't match the selector */
+/* span:not(.sr-only) {
+    font-weight: normal;
+} */
+
+table {
+
+    /* border-collapse: allow cell borders to collapse into a single border,
+    instead of a border around each cell */
+    border-collapse: collapse;
+    border: 0;
+    width: 100%;
+    position: relative;
+    margin-top: 3rem;
+
+}
+
+table caption {
+    color: #356eaf;
+    font-size: 1.3em;
+    font-weight: normal;
+    position: absolute;
+    top: -2.25rem;
+    left: 0.5rem;
+}
+
+/* This approach ensure that the width is fixed, */
+
+tbody td {
+    width: 100vw;
+    min-width: 4rem;
+    max-width: 4rem;
+
+}
+
+tbody th {
+    width: calc(100% - 12rem);
+    
+}
+
+/* [attribute="value"] targets any element that has an attribute with specific value */
+tr[class="total"] {
+    border-bottom: 4px double #0a0a23;
+    font-weight: bold;
+}
+
+/* Difference between tr[class="total"] and tr.total:
+the former select tr elements where only class is total.
+the latter select tr elements where the class includes total */
+tr[class="total"] th {
+    text-align: left;
+    padding: .5rem 0 .25rem .5rem;
+}
+
+tr.total td {
+    text-align: right;
+    padding: 0 0.25rem;
+
+}
+
+tr.total td:nth-of-type(3) {
+    padding-right: 0.5rem;
+}
+
+tr.total:hover {
+    background: #99c9ff;
+
+}
+
+td.current {
+    font-style: italic;
+
+}
+
+tr.data {
+    background-image: linear-gradient(to bottom, #dfdfe2 1.845rem, white 1.845rem);
+}
+
+tr.data th {
+    text-align: left;
+    padding-top: 0.3rem;
+    padding-left: 0.5rem;
+}
+
+tr.data th .description {
+    display: block;
+    font-style: italic;
+    font-weight: normal;
+    padding: 1rem 0 0.75rem;
+    margin-right: -13.5rem;
+}
+
+tr.data td {
+    vertical-align: top;
+    text-align: right;
+    padding: 0.3rem 0.25rem 0;
+}
+
+tr.data td:last-of-type {
+    padding-right: 0.5rem;
+    
 }
