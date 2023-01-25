@@ -10,6 +10,17 @@
     max-width: 500px;
     max-height: 500px;
 
+    /* animation-name: link a @keyframes to a CSS selector. */
+    animation-name: wheel;
+
+    /* animation-duration: set how long the animation should sequence to complete. */
+    animation-duration: 10s;
+
+    /* animation-iteration-count: set how many times the animation should repeat. */
+    animation-iteration-count: infinite;
+
+    /* animation-timing-function: set how the animation should progress over time. */
+    animation-timing-function: linear;
 
 }
 
@@ -50,7 +61,73 @@
     height: 20%;
     position: absolute;
     border: 2px solid;
-    
+    transform-origin: 50% 0%;
+
+    /* We can use the animation property to set all the animation settings at once */
+    /* ease-in-out attribute; set animation to start and end at slower pace, but move quickly 
+    in the middle cycle. */
+    animation: cabins 10s ease-in-out infinite;
+
+
+
 }
 
+.cabin:nth-of-type(1) {
+    right: -8.5%;
+    top: 50%;
+}
+.cabin:nth-of-type(2) {
+    right: 17%;
+    top: 93.5%;
+}
+.cabin:nth-of-type(3) {
+    right: 67%;
+    top: 93.5%;
+}
+.cabin:nth-of-type(4) {
+    left: -8.5%;
+    top: 50%;
+}
+.cabin:nth-of-type(5) {
+    left: 17%;
+    top: 7%;
+}
+.cabin:nth-of-type(6) {
+    right: 17%;
+    top: 7%;
+}
 
+/* @keyframes is used to define flow of a CSS animation.
+@keyframes rule require a name assigned. */
+
+@keyframes wheel {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes cabins {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        background-color: yellow;
+    }
+
+    50% {
+        background-color: purple;
+    }
+
+    75% {
+        background-color: yellow;
+    }
+
+    100% {
+        transform: rotate(-360deg);
+    }
+}
