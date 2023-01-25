@@ -1,0 +1,97 @@
+/* Browsers can apply default margin and padding values to specific elements. 
+To make sure your piano looks correct, you need to reset the box model. */
+
+html {
+    box-sizing: border-box;
+}
+
+/* After resetting html box model, each targeted elements need to be passed on as well.
+We can do that by using box-sizing:inherit;, telling the targeted elements to use the 
+same value as parent element. */
+
+*, ::before, ::after {
+box-sizing: inherit;
+}
+
+#piano {
+    background-color: #00471b;
+    width: 992px;
+    height: 290px;
+    margin: 80px auto;
+    padding: 90px 20px 0 20px;
+
+    /* this position: relative is used by img element as a reference position */
+    position: relative;
+    border-radius: 10px;
+
+}
+
+.keys {
+    background-color: #040404;
+    width: 949px;
+    height: 180px;
+    padding-left: 2px;
+
+    /* setting overflow: hidden; will prevent keys from collapsing down,
+    hiding overflown elements */
+    overflow: hidden;
+
+}
+
+.key {
+    background-color: #ffffff;
+    position: relative;
+    width: 41px;
+    height: 175px;
+    margin: 2px;
+    float: left;
+    border-radius: 0 0 3px 3px;
+}
+
+.key.black--key::after {
+    background-color: #1d1e22;
+    content: '';
+    position: absolute;
+    left: -18px;
+    width: 32px;
+    height: 100px;
+    border-radius: 0 0 3px 3px;
+}
+
+.logo {
+    width: 200px;
+    position: absolute;
+    top: 23px;
+
+}
+
+/* Media query that applied when viewport is 768px wide and below 
+CSS elements can be added into media query selector*/
+@media (max-width: 768px) {
+    #piano {
+        width: 358px;
+
+    }
+
+    .keys {
+        width: 318px;
+
+    }
+
+    .logo {
+        width: 150px;
+
+    }
+}
+
+/* Logical operators can be used to create more complex media queries. */
+
+@media (min-width: 769px) and (max-width: 1199px) {
+    #piano {
+        width: 675px;
+    }
+
+    .keys {
+        width: 633px;
+    }
+}
