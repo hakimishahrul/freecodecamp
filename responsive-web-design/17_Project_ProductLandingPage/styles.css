@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+header {
+    position: fixed;
+    top: 0;
+    min-height: 75px;
+    padding: 0px 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #eee;
+}
+
+nav {
+    display: block;
+
+}
+
+div {
+    display: block;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+.logo {
+    width: 60vw;
+}
+
+@media only screen and (max-width: 600px) {
+    .logo {
+        width: 40vw;
+    }
+}
