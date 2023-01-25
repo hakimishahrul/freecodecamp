@@ -1,0 +1,56 @@
+/* Learn CSS Animation by Building a Ferris Wheel */
+
+.wheel {
+    border: 2px solid black;
+    border-radius: 50%;
+    margin-left: 50px;
+    position: absolute;
+    width: 55vw;
+    height: 55vw;
+    max-width: 500px;
+    max-height: 500px;
+
+
+}
+
+.line {
+    background-color: black;
+    width: 50%;
+    height: 2px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    /* transform-origin: set point around which CSS transformation is applied.
+    (eg. using transform-origin: rotate; it determines around which point the
+    element is rotated.) */
+    /* This transform-origin will offset origin point by 0% left and 0% top.*/
+    transform-origin: 0% 0%;
+}
+
+.line:nth-of-type(2) {
+    transform: rotate(60deg);
+}
+.line:nth-of-type(3) {
+    transform: rotate(120deg);
+}
+.line:nth-of-type(4) {
+    transform: rotate(180deg);
+}
+.line:nth-of-type(5) {
+    transform: rotate(240deg);
+}
+.line:nth-of-type(6) {
+    transform: rotate(300deg);
+}
+
+.cabin {
+    background-color: red;
+    width: 20%;
+    height: 20%;
+    position: absolute;
+    border: 2px solid;
+    
+}
+
+
