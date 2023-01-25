@@ -5,5 +5,255 @@
 }
 
 html {
+
+    /* font-size: 62.5% default font size to 10px
+    (normal browser default is 16px).  */
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Baskervville', serif;
+    color: linen;
+    background-color: rgb(20, 30, 40);
+}
+
+h1 {
+    font-family: 'Anton', sans-serif;
+
+}
+
+h2, h3, h4, h5, h6 {
+    font-family: 'Raleway', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: linen;
+}
+
+/* CSS Grid offers a two-dimensional grid-based layout, 
+allowing you to center items horizontally and vertically 
+while still retaining control to do things like overlap elements. */
+main {
+    display: grid;
+
+    /* Setting the content to have a three-column layout */
+    /* this style will create three column, 2nd part is 94rem wide,
+    while 1st and 3rd part are both 1 fraction of the remaining space */
+    /* (fr is fraction) */
+    /* minmax function make columns responsive on any device.
+    It takes two arguments, 1st min, 2nd max. */
+    grid-template-columns: minmax(2rem, 1fr) minmax(min-content, 94rem) minmax(2rem, 1fr);
+
+    /* row-gap: add space between rows in the grid layout */
+    row-gap: 3rem;
+}
+
+
+.heading {
+
+    /* We can have a CSS grid within CSS grid */
+    display: grid;
+
+    /* Using grid-column tells the grid item link to start and end. */
+    /* This case, grid-column will start at grid line 2, end at grid line 3 */
+    grid-column: 2/3;
+
+    /* CSS repeat() function is used to repeat a value
+    (eg. repeat(20, 200px) would create a 20 columns each 200px wide */
+    grid-template-columns: repeat(2, 1fr);
+
+    row-gap: 1.5rem;
+}
+
+.text {
+
+    /* We can create grid without CSS grid by using column-width: */
+    column-width: 25rem;
+
+    grid-column: 2/3;
+    font-size: 1.8rem;
+    letter-spacing: 0.6px;
+    text-align: justify;
+}
+
+.hero {
+
+    /* There are times where we are unsure of how many grid we will have.
+    In this case, just end with -1, as index at final grid. */
+    grid-column: 1 / -1;
+    position: relative;
+}
+
+img {
+    width: 100%;
+
+    /* object-fit: tells browser how to position the element within its container.
+    object-fit: cover; sets image to fill container, cropping as needed */
+    object-fit: cover;
+}
+
+.hero-title {
+    text-align: center;
+    color: orangered;
+    font-size: 8rem;
+
+}
+
+.hero-subtitle {
+    font-size: 2.4rem;
+    color: orangered;
+    text-align: center;
+
+}
+
+.author {
+    font-size: 2rem;
+    font-family: 'Raleway', sans-serif;
+}
+
+.author-name a:hover {
+    background-color: #306203;
+
+}
+
+.publish-date {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.social-icons {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    font-size: 3rem;
+
+    /* grid-auto-flow: takes eitehr row/column as 1st value,
+    with optional 2nd value of 'dense'.
+    It uses an auto-placement algorithm to adjust the grid layout. 
+    'dense' allows algorithm to backtrack and fill holes in grid 
+    with smaller items.*/
+    grid-auto-flow: column;
+
+    /* grid-auto-columns override the algorithm. */
+    grid-auto-columns: 1fr;
+    align-items: center;
+}
+
+/* ::first-letter targets the first letter in the element. */
+.first-paragraph::first-letter {
+    font-size: 6rem;
+    color: orangered;
+    float: left;
+    margin-right: 1rem;
+
+}
+
+hr {
+    margin: 1.5rem 0;
+    border: 1px solid rgba(120, 120, 120, 0.6);
+}
+
+.quote {
+    font-family: 'Raleway', sans-serif;
+    color: #00beef;
+    font-size: 2.4rem;
+    text-align: center;
+}
+
+/* To add quotation marks, simply add ::before, ::after */
+.quote::before {
+    content: '" ';
+
+}
+
+.quote::after {
+    content: ' "';
+}
+
+.text-with-images {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 3rem;
+    margin-bottom: 3rem;
+
+}
+
+.lists {
+
+    /* This will get rid of bullet points in list elements */
+    list-style-type: none;
+    margin-top: 2rem;
+}
+
+.lists li {
+    margin-bottom: 1.5rem;
+
+}
+
+.list-title, .list-subtitle {
+    color: #00beef;
+}
+
+.image-wrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: repeat(3, min-content);
+
+    /* gap: sets value of both column-gap and row-gap */
+    /* 1 value sets both row and column, 2 values sets row, and then column */
+    gap: 2rem;
+
+    /* place-items: set align-items and justify-items */
+    /* 1 value sets both align and justify, 2 values sets align, and then justify */
+    place-items: center;
+}
+
+
+/* Allows 1st and 3rd images to span full witdh of the grid */
+.image-1, .image-3 {
+    grid-column: 1/-1;
+}
+
+/* Making Magazine responsive by using @media */
+@media only screen and (max-width: 720px) {
+    .image-wrapper {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .text-with-images {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .hero-title {
+        font-size: 6rem;
+
+    }
+
+    .hero-subtitle, .author, .quote, .list-title {
+        font-size: 1.8rem;
+
+    }
+
+    .social-icons {
+        font-size: 2rem;
+
+    }
+
+    .text {
+        font-size: 1.6rem;
+
+    }
+    
+}
+
+@media only screen and (max-width: 420px) {
+    .hero-title {
+        font-size: 4.5rem;
+        
+    }
     
 }
