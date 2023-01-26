@@ -16,9 +16,9 @@ const JSX2 = <div>
 <p>Paragraph Three</p>
 </div>;
 
-const JSX2Wrong = <p>Paragraph One</p>
-<p>Paragraph Two</p>
-<p>Paragraph Three</p>;
+// const JSX2Wrong = <p>Paragraph One</p>
+// <p>Paragraph Two</p>
+// <p>Paragraph Three</p>;
 
 // To put comments inside JSX, you use the syntax {/* */} to wrap around the comment text.
 
