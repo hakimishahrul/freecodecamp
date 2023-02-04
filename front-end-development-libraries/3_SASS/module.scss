@@ -1,0 +1,129 @@
+//  SASS Module File 
+//  NOTE: To use this file, install Sass, use npm:
+// `npm install -g sass`
+
+/* 1. One feature of Sass that's different than CSS is that Sass uses variables.
+They're declared and set to store data, like JS.
+
+JS uses `let` and `const` keywords. Sass uses '$'*/
+
+$text-color: red;
+
+
+// 2. Nest CSS w/ Sass. Instead of 
+
+// nav ul li {
+// background-color: $text-color;
+// }
+
+// Sass can use 
+
+nav {
+    ul {
+        li {
+            background-color: $text-color;
+        }
+    }
+}
+
+// 3. Create Reusable CSS with Mixins. Mixin is a group of CSS declarations that can be reused 
+// throughout the style sheet.
+
+// In CSS:
+// div {
+//     -webkit-box-shadow: 0px 0px 4px #fff;
+//     -moz-box-shadow: 0px 0px 4px #fff;
+//     -ms-box-shadow: 0px 0px 4px #fff;
+//     box-shadow: 0px 0px 4px #fff;
+//}
+
+//   In Sass:
+@mixin box-shadow($x, $y, $blur, $c) {
+    -webkit-box-shadow: $x $y $blur $c;
+    -moz-box-shadow: $x $y $blur $c;
+    -ms-box-shadow: $x $y $blur $c;
+    box-shadow: $x $y $blur $c;
+}
+
+// 4. The @if directive in Sass is useful to test for a specific case - it works just like the if statement in JavaScript.
+@mixin border-stroke($val) {
+    @if $val ==light {
+        border: 1px solid black;
+    }
+
+    @else if $val ==medium {
+        border: 3px solid black;
+    }
+
+    @else if $val ==heavy {
+        border: 6px solid black;
+    }
+
+    @else {
+        border: none;
+    }
+}
+
+// 5. Use @for to Create a Sass Loop. @for add styles in a loop:
+@for $j from 1 through 6 {
+    .text-#{$j} {
+        font-size: 15 * $j;
+    }
+}
+
+// 6. Use @each to Map Over Items in a List. One example:
+@each $color in blue,
+red,
+green {
+    .#{$color}-text {
+        color: $color;
+    }
+}
+
+// Another example:
+$colors: (
+    color1: blue,
+    color2: red,
+    color3: green
+);
+
+@each $key,
+$color in $colors {
+    .#{$color}-text {
+        color: $color;
+    }
+}
+
+// 7. Apply a Style Until a Condition is Met with @while
+$x: 1;
+
+@while $x < 13 {
+    .col-#{$x} {
+        width: 100%/12 * $x;
+    }
+
+    $x: $x + 1;
+}
+
+// 8. Split Your Styles into Smaller Chunks with Partials
+// Partials in Sass are separate files that hold segments of CSS code. 
+// These are imported and used in other Sass files. 
+// This is a great way to group similar code into a module to keep it organized.
+// Name for partials start with underscore `_`
+// eg. We have created a file named _variables.scss. To import it:
+@import 'variables'
+
+// 9. Extend One Set of CSS Styles to Another Element
+// Sass has a feature called extend that makes it easy to borrow the CSS rules from one element and build upon them in another.
+// For example, the below block of CSS rules style a .panel class. It has a background-color, height and border.
+.panel {
+    background-color: red;
+    height: 70px;
+    border: 2px solid green;
+}
+
+.big-panel {
+    @extend .panel;
+    width: 150px;
+    font-size: 2em;
+}
