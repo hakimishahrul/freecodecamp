@@ -1,2 +1,14 @@
+* {
+    border: 1px solid black;
+    box-sizing: border-box;
+
+}
 /* The #quote-box wrapper element should be horizontally centered. 
 Please run tests with browser's zoom level at 100% and page maximized. */
+
+#quote-box {
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
