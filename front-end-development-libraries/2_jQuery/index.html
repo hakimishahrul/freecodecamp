@@ -1,0 +1,86 @@
+<!-- jQuery -->
+<!-- Only change code above this line -->
+
+<div class="container-fluid">
+    <h3 class="text-primary text-center">jQuery Playground</h3>
+    <div class="row">
+        <div class="col-xs-6">
+            <h4>#left-well</h4>
+            <div class="well" id="left-well">
+                <button class="btn btn-default target" id="target1">#target1</button>
+                <button class="btn btn-default target" id="target2">#target2</button>
+                <button class="btn btn-default target" id="target3">#target3</button>
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <h4>#right-well</h4>
+            <div class="well" id="right-well">
+                <button class="btn btn-default target" id="target4">#target4</button>
+                <button class="btn btn-default target" id="target5">#target5</button>
+                <button class="btn btn-default target" id="target6">#target6</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    // Add document ready function so that the code will run as soon as the browser has loaded the page.
+    $(document).ready(function () {
+        // All jQuery function start with a $. It selects HTML element as selector, then do something to it.
+
+        // This is the addClass function
+        // This bounce is from Animated.css library. It add bounce to all button elements
+        $("button").addClass("animated");
+
+        // Targeting div elements with the class well
+        $(".btn").addClass("shake");
+
+        // Targeting id elements
+        $("#target1").addClass("btn-primary");
+
+        
+        // This is the removeClass function
+        $("button").removeClass("btn-default");
+
+        // This is the css function. It changes the CSS of an element
+        $("#target1").css("color", "red");
+
+        // .prop() adjust the properties of an element
+        $("#target1").prop("disabled", true);
+
+        // .html() add HTML tags and text within an element
+        $("#target4").html("<em>#target4</em>");
+
+        // .remove() deletes an HTML element entirely
+        $("#target4").remove();
+
+        // .appendTo() select HTML elements and append it to another element
+        // In detail, it moves inside and the end of the #right-well element
+        $("#target2").appendTo("#right-well");
+
+        // .clone() makes a copy of the element
+        $("#target5").clone().appendTo("#right-well");
+
+        // .parent() allows to access the parent of the selected element
+        // In this code, the targeted element is div element with id="left-well"
+        $("#target1").parent().css("background-color", "red");
+
+        // .children() allows to access the children of the selected element
+        // In this code, the targeted element is all button element (#target5, #target6, #target2)
+        $("#right-well").children().css("color", "blue");
+
+        // jQuery uses CSS selectors to target elements
+        $(".target:nth-child(2)").addClass("animated bounce");
+
+        // using :odd or :even selector to target odd or even elements respectively
+        $(".target:even").addClass("animated shake");
+
+        // using jQuery to modify the entire page
+        $("body").addClass("animated hinge");
+    });
+
+
+
+
+</script>
