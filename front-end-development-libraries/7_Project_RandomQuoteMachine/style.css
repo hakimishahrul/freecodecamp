@@ -1,0 +1,48 @@
+
+
+html {
+  width: 100vw;
+  height: 100vh;
+
+}
+
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+  font-size: 40px;
+  margin: 0;
+  /* font-weight: 800; */
+}
+
+/* Step 11: The #quote-box wrapper element should be horizontally centered. Please run tests with browser's zoom level at 100% and page maximized. */
+#quote-box {
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 10px;
+}
+
+button {
+  font-size: 36px;
+}
+
+#quote-tweet {
+  font-size: 20px;
+}
+
+#quote-tweet, #quote-author, #quote-button, #quote-tweet {
+  margin-top: 20px;
+}
+
+#quote-author {
+  font-size: 24px;
+  font-style: italic;
+}
